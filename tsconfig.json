@@ -1,0 +1,12 @@
+{
+  "extends": "@tsconfig/svelte/tsconfig.json",
+  "baseUrl": "src",
+  "paths": {
+    "@/components/*": ["components/*"],
+    "@/global/*": ["global/*"],
+    "@/src/*": ["src/*"],
+    "@/data/*": ["data/*"],
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules/*", "__sapper__/*", "public/*"]
+}
