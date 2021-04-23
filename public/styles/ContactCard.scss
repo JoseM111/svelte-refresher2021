@@ -1,4 +1,4 @@
-/* contact-card.scss */
+/* ContactCard.scss */
 
 .ContactCardContainer {
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
@@ -7,7 +7,7 @@
 	margin: 1rem 0;
 	background: #222222;
 	color: white;
-	
+
 	/* inner-container */
 	header {
 		display: flex;
@@ -15,24 +15,24 @@
 		align-items: center;
 		height: 7rem;
 	}
-	
+
 	.img-container {
 		width: 33%;
 		height: 100%;
 	}
-	
+
 	.img-placeholder {
 		background: #a4a3a3;
 		width: 33%;
 		height: 100%;
 	}
-	
+
 	img {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
 	}
-	
+
 	.user-info {
 		width: 67%;
 		display: flex;
@@ -40,21 +40,21 @@
 		justify-content: center;
 		padding-left: 1rem;
 	}
-	
+
 	h1 {
 		font-size: 1.25rem;
 		margin: 0.5rem 0;
 	}
-	
+
 	h2 {
 		font-size: 1rem;
 		font-weight: normal;
 		margin: 0 0 0.5rem;
 	}
-	
+
 	.description {
 		border-top: 1px solid #ccc;
 		padding: 1rem;
 	}
-	
+
 }

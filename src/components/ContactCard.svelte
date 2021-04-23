@@ -39,7 +39,7 @@
 	<main>
 		
 		<!--⌨⌨⌨⌨|TITLE|⌨⌨⌨⌨-->
-		<p class="description">{description}</p>	
+		<p class="description">{description}</p>
 	
 	</main>
 	
@@ -49,7 +49,7 @@
 
 <!-- ━━━━━━━━━ CSS | SCSS | SASS ━━━━━━━━━ -->
 <style lang="scss">
-	@import 'public/styles/contact-card.scss';
+	@import '../../public/styles/ContactCard';
 	/* | ⌫⌫⌫⌫⌫⌫⌫⌫⌫⌫⌫⌫⌫⌫⌫⌫⌫⌫⌫⌫⌫⌫⌫⌫⌫⌫⌫⌫⌫⌫⌫⌫⌫⌫⌫ | */
 	
 	
