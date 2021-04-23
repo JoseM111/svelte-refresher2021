@@ -1,7 +1,8 @@
 <!-- ━━━━━━━━━ JS | TS ━━━━━━━━━ -->
 <script lang="ts">
-	import type { InputTargetEvent } from './global/global'
+	import type { Contact } from './types/types'
 	import ContactCard from './components/ContactCard.svelte'
+	/** #™━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 	
 	/**: - ©MEMBER-PROPERTIES| */
 	/*| #™━━━━━━━━━━━━━━━━━━━━━|*/
@@ -11,6 +12,7 @@
 	let description: string = ''
 	let formState: string = 'empty'
 	// let age: number = 38
+	let createdContacts: Contact[] = []
 	/*| #™━━━━━━━━━━━━━━━━━━━━━|*/
 	
 	/**| ™- LABELED-STATEMENT |*/
@@ -27,23 +29,44 @@
 	
 	const addContact = () => {
 			//..........
-			name.trim().length == 0
-			|| jobTitle.trim().length == 0
-			|| imageURL.trim().length == 0
-			|| description.trim().length == 0
-				? formState = 'invalid'
-				: formState = 'isDone'
+			// name.trim().length == 0
+			// || jobTitle.trim().length == 0
+			// || imageURL.trim().length == 0
+			// || description.trim().length == 0
+			// 	? formState = 'invalid'
+			// 	: formState = 'isDone'
+			
+			if (
+				name.trim().length == 0
+				|| jobTitle.trim().length == 0
+				|| imageURL.trim().length == 0
+				|| description.trim().length == 0
+			) {
+				formState = 'invalid'
+				return
+			}
+			
+			createdContacts = [
+				...createdContacts, {
+					name: name,
+					jobTitle: jobTitle,
+					imageURL: imageURL,
+					description: description,
+				} ]
+			
+			formState = 'isDone'
+			
 		}
 	// END-OF: addContact--
 	
 	// const changeName = (): string => name = 'J-Sin'
 	// END-OF: changeName--
 	
-	const inputHandler = (event: InputTargetEvent): void => {
-		//..........
-		name = event.target.value
-	}
-	// END-OF: inputHandler--
+	// const inputHandler = (event: InputTargetEvent): void => {
+	// 	//..........
+	// 	name = event.target.value
+	// }
+	// // END-OF: inputHandler--
 
 </script>
 <!-- ⚫️⚫️⚫️⚫️⚫️⚫️⚫️⚫️⚫️🔵🔵🔵🔵🔵🔵🔵🔵━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
@@ -104,33 +127,49 @@
 			<!------------------------------------------------>
 		</form>
 		
-		<!--♠♠♠| ContactCard |♠♠♠-->
-		<!---->
-		{#if formState === 'isDone'}
-			<ContactCard
-				userName={name}
-				{jobTitle}
-				{description}
-				userImage={imageURL}
-			/>
-			<!---->
-		{:else if formState === 'invalid'}
-			<p><b>INVALID INPUT</b></p>
-			{:else}
-			<p>
-				<i>Please enter information a then press the 
-					<span class="addContactColor"><b>Add Contact</b></span> button.
-				</i>
-			</p>
-		{/if}
-		<!---->
-		
 		<!--♠♠♠| Button(Add Contact) |♠♠♠-->
 		<button
 			class="addContactBtn"
 			on:click={addContact}
 		>Add Contact
 		</button>
+		
+		<!--♠♠♠| ContactCard |♠♠♠-->
+		<!---->
+		{#if formState === 'invalid'}
+			<p><b>Invalid Input</b></p>
+			<!---->
+		{:else}
+			<p>
+				<i>Please enter information a then press the
+					<span class="addContactColor"><b>Add Contact</b></span> button.
+				</i>
+			</p>
+		{/if}
+		<!---->
+		
+		<!---->
+		<ul>
+			{#each createdContacts as contact, index}
+				<li>
+					<span class="span-align">
+						<span class="indexColor">{index + 1}-</span>
+						<span class="ContactCardPad">
+							<ContactCard
+								userName={contact.name}
+								jobTitle={contact.jobTitle}
+								description={contact.description}
+								userImage={contact.imageURL}
+							/>
+						</span>
+					</span>
+				</li>
+			{/each}
+		</ul>
+		
+		<!---->
+		<!--♠♠♠| ContactCard |♠♠♠-->
+	
 	</main>
 	
 	<!-- ━━━━━━━━━━━━━━━ CONTAINER ━━━━━━━━━━━━━━━ -->

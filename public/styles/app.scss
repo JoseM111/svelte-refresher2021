@@ -23,6 +23,24 @@ $buttonActiveBoxShadow: 1px 1px 8px rgba(77, 51, 51, 0.26);
 		background: #f3f3f3;
 	}
 	
+	ul {
+		list-style-type: none;
+	}
+	
+	.span-align {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+	}
+	
+	.indexColor {
+		color: dodgerblue;
+	}
+	
+	.ContactCardPad {
+		margin-left: 10px;
+	}
+	
 	button {
 		font: inherit;
 		outline: none;
@@ -51,7 +69,7 @@ $buttonActiveBoxShadow: 1px 1px 8px rgba(77, 51, 51, 0.26);
 	}
 	
 	.addContactColor {
-		color: dodgerblue;
+		color: orangered;
 	}
 	
 	.chg-name-btn {
