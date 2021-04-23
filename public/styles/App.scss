@@ -27,18 +27,8 @@ $buttonActiveBoxShadow: 1px 1px 8px rgba(77, 51, 51, 0.26);
 		list-style-type: none;
 	}
 
-	.span-align {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-around;
-	}
-
 	.indexColor {
 		color: dodgerblue;
-	}
-
-	.ContactCardPad {
-		margin-left: 10px;
 	}
 
 	button {
@@ -64,6 +54,15 @@ $buttonActiveBoxShadow: 1px 1px 8px rgba(77, 51, 51, 0.26);
 		opacity: 0.45;
 	}
 
+	.btnDelFirst button {
+		background: dodgerblue;
+		margin-top: 8px;
+		margin-bottom: 8px;
+	}
+	.btnDelLast button {
+		background: orangered;
+	}
+
 	.addContactBtn {
 		margin-top: 10px;
 	}
@@ -75,8 +74,6 @@ $buttonActiveBoxShadow: 1px 1px 8px rgba(77, 51, 51, 0.26);
 	.chg-name-btn {
 		background: $customColor;
 	}
-
-
 }
 
 
