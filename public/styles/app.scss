@@ -2,6 +2,7 @@
 /*------------------------------------------*/
 $customColor: dodgerblue;
 $hotPink: #e40763;
+$buttonBoxShadow: 1px 1px 8px rgba(77, 51, 51, 0.26);
 /*------------------------------------------*/
 .AppContainer {
 	max-width: 30rem;
@@ -41,7 +42,7 @@ $hotPink: #e40763;
 	button:active {
 		background: $hotPink;
 		border-color: $hotPink;
-		box-shadow: 1px 1px 8px rgba(77, 51, 51, 0.26);
+		box-shadow: $buttonBoxShadow;
 		opacity: 0.45;
 	}
 	
